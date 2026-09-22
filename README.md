@@ -83,19 +83,19 @@ The following transformations were applied before analysis:
 
 Additional variables were derived to support the analysis.
 
-| Feature           | Derivation                          | Analytical Purpose                      |
-| ----------------- | ----------------------------------- | --------------------------------------- |
-| `year`            | Extracted from `tanggal_pemesanan`. | Annual performance analysis.            |
-| `quarter`         | Derived from `tanggal_pemesanan`.   | Quarterly performance analysis.         |
-| `year_month`      | Derived from `tanggal_pemesanan`.   | Monthly performance analysis.           |
-| `discount_amount` | `penjualan × diskon`.               | Monetary value of the discount applied. |
-| `net_sales`       | `penjualan - discount_amount`.      | Sales value after discount.             |
+| Feature           | Derivation                         | Analytical Purpose                     |
+| ----------------- | ---------------------------------- | -------------------------------------- |
+| `year`            | Extracted from `tanggal_pemesanan` | Annual performance analysis            |
+| `quarter`         | Derived from `tanggal_pemesanan`   | Quarterly performance analysis         |
+| `year_month`      | Derived from `tanggal_pemesanan`   | Monthly performance analysis           |
+| `discount_amount` | `penjualan × diskon`               | Monetary value of the discount applied |
+| `net_sales`       | `penjualan - discount_amount`      | Sales value after discount             |
 
 ## Exploratory Analysis
 
 ### Dataset Overview
 
-![Dataset descriptive statistics](figures/dataset_descriptive_statistics.png)
+<img src="figures/dataset_descriptive_statistics.png" width="900" alt="Dataset descriptive statistics">
 
 After cleaning, the dataset contains 10,076 line-item records across 5,009 orders, covering 2014 to 2017, 3 customer segments, 10 provinces, and 17 product sub-categories. Transaction values vary substantially, discount rates range from 0% to 80%, and line-item profitability includes both profitable and loss-making outcomes.
 
@@ -117,29 +117,29 @@ Key calculations:
 
 #### Key Findings
 
-**1. Net sales and profitability increased substantially from 2014 to 2017.**
+##### 1. Net sales and profitability increased substantially from 2014 to 2017
 
-![Annual net sales, profit, and profit Margin](figures/q1_annual_commercial_performance.png)
+<img src="figures/q1_annual_commercial_performance.png" width="700" alt="Annual net sales, profit, and profit Margin">
 
 Annual net sales rose from approximately Rp6.12B to Rp9.53B, an increase of 55.8%. Profit increased 89.3%, from about Rp748M to Rp1.42B, while profit margin improved from 12.2% to 14.9%. Growth accelerated particularly sharply in 2016, with quarterly YoY net sales growth reaching 40.96% in Q1 and 51.53% in Q2.
 
-**2. Expansion was driven primarily by more orders rather than larger baskets.**
+##### 2. Expansion was driven primarily by more orders rather than larger baskets
 
-![Sales growth drivers](figures/q1_sales_growth_drivers.png)
+<img src="figures/q1_sales_growth_drivers.png" width="700" alt="Sales growth drivers">
 
 Order volume increased 74.1%, from 969 to 1,687 orders, while quantity sold rose 64.9%, from 7,628 to 12,579 units. Meanwhile, AOV declined 10.5%, from approximately Rp6.31M to Rp5.65M, and UPT decreased 5.3%, from 7.87 to 7.46. Net sales growth therefore coincided with substantially higher order volume and quantity sold, despite lower average order values and slightly fewer units per transaction.
 
-**3. Performance showed a recurring seasonal pattern.**
+##### 3. Performance showed a recurring seasonal pattern
 
-![Quarterly net sales](figures/q1_quarterly_net_sales.png)
+<img src="figures/q1_quarterly_net_sales.png" width="700" alt="Quarterly net sales">
 
-![Monthly net sales](figures/q1_monthly_net_sales.png)
+<img src="figures/q1_monthly_net_sales.png" width="700" alt="Monthly net sales">
 
 Q4 generated the highest quarterly net sales in every year, rising from approximately Rp2.33B in 2014 to Rp3.59B in 2017. Q1 consistently declined from the preceding Q4 peak, while monthly performance was generally stronger from September through December, indicating a recurring year-end concentration in commercial activity.
 
-**4. Higher net sales did not always coincide with stronger profitability.**
+##### 4. Higher net sales did not always coincide with stronger profitability
 
-![Quarterly net sales and profit margin](figures/q1_quarterly_net_sales_and_profit_margin.png)
+<img src="figures/q1_quarterly_net_sales_and_profit_margin.png" width="700" alt="Quarterly net sales and profit margin">
 
 In Q4 2017, net sales reached a record Rp3.59B, up 13.09% YoY, yet profit fell to approximately Rp414.6M and profit margin declined to 11.56%, from 18.35% in Q4 2016. Profit decreased by approximately 28.8% despite higher net sales, demonstrating that net sales growth did not necessarily translate into stronger profitability.
 
@@ -169,37 +169,37 @@ This approach provides a comparative prioritization framework across scale, prof
 
 #### Key Findings
 
-**1. Phones were the strongest-performing sub-category overall.**
+##### 1. Phones were the strongest-performing sub-category overall
 
-![Sub-category commercial rank](figures/q2_subcategory_commercial_rank.png)
+<img src="figures/q2_subcategory_commercial_rank.png" width="700" alt="Sub-category commercial rank">
 
 Phones recorded the lowest (strongest) average commercial rank of 1.75 and generated the highest net sales at approximately Rp4.25B, alongside Rp670.8M in profit. The sub-category remained profitable in every year and showed strong ranking consistency, with a commercial rank SD of 0.56. Chairs also generated substantial net sales, but their 9.52% profit margin and weaker profit ranking made their overall performance less balanced.
 
-**2. Weakness differed between low commercial contribution and sustained unprofitability.**
+##### 2. Weakness differed between low commercial contribution and sustained unprofitability
 
-![Sub-category profit](figures/q2_subcategory_profit.png)
+<img src="figures/q2_subcategory_profit.png" width="700" alt="Sub-category profit">
 
 Fasteners recorded the weakest average commercial rank of 15.50, reflecting their relatively small contribution to net sales and profit despite remaining profitable in every year. Tables showed the clearest profitability weakness, generating an overall Rp262.9M loss, a −10.66% profit margin, and losses in all four years. Bookcases and Supplies also showed recurring profitability concerns, recording losses in three of four years.
 
-**3. Customer-segment commercial rankings were completely stable.**
+##### 3. Customer-segment commercial rankings were completely stable
 
-![Customer segment rank stability](figures/q2_segment_rank_stability.png)
+<img src="figures/q2_segment_rank_stability.png" width="700" alt="Customer segment rank stability">
 
-![Customer segment commercial performance](figures/q2_segment_%20commercial_performance.png)
+<img src="figures/q2_segment_commercial_performance.png" width="700" alt="Customer segment commercial performance">
 
 Consumer ranked first in every year, Corporate second, and Home Office third, resulting in a commercial rank SD of 0.00 for all three segments. Consumer generated the largest contribution, with approximately Rp15.06B in net sales and Rp2.01B in profit, while Home Office achieved the highest profit margin at 16.57%. Its weaker commercial rank therefore reflected smaller scale rather than weaker profitability.
 
-**4. Jawa Timur showed the strongest balanced provincial performance.**
+##### 4. Jawa Timur showed the strongest balanced provincial performance
 
-![Provincial commercial performance](figures/q2_provincial_commercial_performance.png)
+<img src="figures/q2_provincial_commercial_performance.png" width="700" alt="Provincial commercial performance">
 
 Jawa Timur recorded the lowest (strongest) average commercial rank of 3.63, while generating approximately Rp3.29B in net sales, the highest provincial profit at Rp614.1M, and the highest profit margin at 18.69%, with no loss-making years.
 
-**5. Provincial weakness was distributed across different dimensions.**
+##### 5. Provincial weakness was distributed across different dimensions
 
-![Provincial commercial rank](figures/q2_provincial_commercial_rank.png)
+<img src="figures/q2_provincial_commercial_rank.png" width="700" alt="Provincial commercial rank">
 
-![Provincial profit margin](figures/q2_provincial_profit_margin.png)
+<img src="figures/q2_provincial_profit_margin.png" width="700" alt="Provincial profit margin">
 
 Sumatera Selatan recorded the weakest average commercial rank of 7.63 but remained profitable in every year and showed relatively stable rankings, with a commercial rank SD of 0.89. Sumatera Utara recorded the lowest provincial profit margin at 10.13% and the greatest ranking variability, with a commercial rank SD of 3.03, alongside one loss-making year. These results indicate that low commercial contribution, weaker profitability, and ranking inconsistency were not concentrated in the same province.
 
@@ -222,27 +222,27 @@ Exact observed discount rates were retained rather than grouped into bands, allo
 
 #### Key Findings
 
-**1. Commercial performance was concentrated at the 0% and 20% discount levels.**
+##### 1. Commercial performance was concentrated at the 0% and 20% discount levels
 
-![Net sales by discount level](figures/q3_net_sales_by_discount_level.png)
+<img src="figures/q3_net_sales_by_discount_level.png" width="700" alt="Net sales by discount level">
 
 The 0% discount level generated approximately Rp16.41B in net sales and Rp4.85B in profit, while the 20% level generated Rp9.25B in net sales and Rp1.37B in profit. Together, these two discount levels accounted for approximately 86.1% of total net sales.
 
-**2. Profitability deteriorated sharply from the 30% discount level onward.**
+##### 2. Profitability deteriorated sharply from the 30% discount level onward
 
-![Profit margin by discount level](figures/q3_profit_margin_by_discount_level.png)
+<img src="figures/q3_profit_margin_by_discount_level.png" width="700" alt="Profit margin by discount level">
 
 Profit margins remained positive through 20%, ranging from 5.97% to 29.53%, before falling to −14.30% at 30%. Every observed discount level above 30% was also loss-making, with particularly severe negative margins at 60%, 70%, and 80%.
 
-**3. High-discount activity generated limited net sales but substantial losses.**
+##### 3. High-discount activity generated limited net sales but substantial losses
 
-![Profitable vs. loss-making discount levels](figures/q3_profitable_vs_lossmaking_discount_levels.png)
+<img src="figures/q3_profitable_vs_lossmaking_discount_levels.png" width="700" alt="Profitable vs. loss-making discount levels">
 
 Discount levels from 30% to 80% accounted for only 10.2% of total net sales, or approximately Rp3.05B, but generated an aggregate loss of about Rp2.06B. These losses offset a substantial portion of the profit generated at lower discount levels.
 
-**4. The most severe discount risk differed by measure.**
+##### 4. The most severe discount risk differed by measure
 
-![Loss exposure and order volume by discount level](figures/q3_loss_exposure%20and_order_volume_by_discount_level.png)
+<img src="figures/q3_loss_exposure%20and_order_volume_by_discount_level.png" width="700" alt="Loss exposure and order volume by discount level">
 
 The **70% discount level** generated the largest absolute loss at approximately **−Rp601.1M**, while the **80% level** recorded the lowest profit margin at **−897.03%**. These levels had associated order volumes of **344 and 250**, respectively, indicating that extreme-discount activity was present across hundreds of orders rather than being confined to isolated transactions.
 
@@ -269,29 +269,29 @@ Risk concentration was used as the primary comparison measure because it adjusts
 
 #### Key Finding
 
-**1. High-discount, loss-making line items accounted for 13.44% of all line-item activity.**
+##### 1. High-discount, loss-making line items accounted for 13.44% of all line-item activity
 
-![Overall risk concentration](figures/q4_overall_risk_concentration.png)
+<img src="figures/q4_overall_risk_concentration.png" width="700" alt="Overall risk concentration">
 
 Of 10,076 line items, 1,354 met the risk definition. These line items generated approximately Rp2.74B in net sales and accounted for Rp2.11B in loss exposure.
 
-**2. Product-level risk was concentrated in several sub-categories.**
+##### 2. Product-level risk was concentrated in several sub-categories
 
-![Sub-category risk concentration](figures/q4_subcategory_risk_concentration.png)
+<img src="figures/q4_subcategory_risk_concentration.png" width="700" alt="Sub-category risk concentration">
 
-![Sub-category loss exposure](figures/q4_subcategory_loss_exposure.png)
+<img src="figures/q4_subcategory_loss_exposure.png" width="700" alt="Sub-category loss exposure">
 
 Tables recorded the highest risk concentration at 53.25%, followed by Binders at 40.06% and Machines at 38.26%. Binders also contained 617 risk line items, representing approximately 45.6% of all risk line items, and recorded the largest sub-category loss exposure at Rp606.2M. Tables and Machines followed with approximately Rp461.4M and Rp451.8M in loss exposure, respectively.
 
-**3. Risk concentration was similar across customer segments.**
+##### 3. Risk concentration was similar across customer segments
 
-![Customer segment risk concentration and loss exposure](figures/q4_segment_risk_concentration_and_loss_exposure.png)
+<img src="figures/q4_segment_risk_concentration_and_loss_exposure.png" width="700" alt="Customer segment risk concentration and loss exposure">
 
 Consumer recorded the highest risk concentration at 13.57%, followed closely by Corporate at 13.52% and Home Office at 12.92%. Consumer nevertheless had the greatest absolute exposure, with 710 risk line items and approximately Rp1.14B in loss exposure, reflecting its larger overall scale.
 
-**4. Geographic risk frequency and financial exposure did not identify the same province.**
+##### 4. Geographic risk frequency and financial exposure did not identify the same province
 
-![Provincial risk concentration and loss exposure](figures/q4_provincial_risk_concentration_and_loss_exposure.png)
+<img src="figures/q4_provincial_risk_concentration_and_loss_exposure.png" width="700" alt="Provincial risk concentration and loss exposure">
 
 Sumatera Selatan recorded the highest risk concentration at 15.88%, followed by DI Yogyakarta at 14.45% and DKI Jakarta at 14.29%. Sumatera Utara, however, recorded the largest provincial loss exposure at approximately Rp314.7M, despite a lower risk concentration of 13.85%. A higher concentration of risk line items therefore did not necessarily correspond to greater monetary loss exposure.
 
@@ -313,7 +313,7 @@ An interactive Data Studio dashboard summarizes the analysis across five areas: 
 
 **Screenshot:**
 
-![Data Studio dashboard screenshot](figures/dashboard_screenshot.jpg)
+<img src="figures/dashboard_screenshot.jpg" width="500" alt="Data Studio dashboard screenshot">
 
 **Dashboard:** [View in Google Data Studio](https://datastudio.google.com/reporting/9b0eee36-cb31-4a41-bf7c-8d2b9de1a000)
 
