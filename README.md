@@ -2,6 +2,8 @@
 
 An e-commerce case study examining sales, profitability, purchasing activity, and discount-related margin risk across products, customer segments, and regions from 2014 to 2017.
 
+![Commercial Performance & Discount Risk Analysis](assets/cover.jpg)
+
 ## Overview
 
 ### Business Context
@@ -384,6 +386,8 @@ An interactive Data Studio dashboard summarizes the analysis across five areas: 
 The dataset was provided by Dicoding Indonesia and used solely for personal learning and portfolio purposes. The analysis, methodology, visualizations, interpretations, conclusions, and dashboard are original work by the author, developed after completing the related course.
 
 The dataset remains subject to Dicoding Indonesia's applicable ownership, licensing, and usage terms.
+
+Cover image by [Growtika](https://unsplash.com/@growtika) on [Unsplash](https://unsplash.com/photos/a-purple-background-with-a-basket-of-items-and-a-target-mlpsHpUUCHY).
 
 For questions or feedback:
 
